@@ -4,7 +4,7 @@
    "version": 2,
    "builds": [
      {
-       "src": "App.js",
+       "src": "server.js",
        "use": "@vercel/node"
      },
      { "src": "*.html", "use": "@vercel/static" },
@@ -13,7 +13,7 @@
    "routes": [
      {
        "src": "/(.*)",
-       "dest": "/App.js"
+       "dest": "/server.js"
      }
    ]
  }
