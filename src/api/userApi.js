@@ -11,7 +11,7 @@ const userApi={
         return axiosClient.get(url)
     },
     login(data) {
-        const url='/auth/signin';
+        const url='/api/users/login';
         return axiosClient.post(url,data)
     },
     sendemail(data) {
