@@ -4,6 +4,8 @@ const axiosClient=axios.create({
     baseURL: 'https://shopcaycanh.vercel.app',
     headers:{
         'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
         // Authorization:
         // "Bearer " + JSON.parse(localStorage.getItem("userInfo"))?.data?.accessToken ?? '', 
     },
