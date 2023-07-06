@@ -3,7 +3,7 @@ import axiosClient from "./axiosClient";
 
 const productApi={
     getAll(params) {
-        const url='/products';
+        const url='/api/products';
         return axiosClient.get(url,{params})
     },
     get(id){

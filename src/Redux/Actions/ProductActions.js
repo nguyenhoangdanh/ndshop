@@ -11,6 +11,7 @@ import {
 } from "../Constants/ProductConstants";
 import axios from "axios";
 import { logout } from "./userActions";
+import productApi from "../../api/productApi";
 
 // PRODUCT LIST
 
@@ -18,9 +19,13 @@ import { logout } from "./userActions";
 export const listProduct = () =>
   async (dispatch) => {
     try {
+      // dispatch({ type: PRODUCT_LIST_REQUEST });
+      // const { data } = await axios.get("/api/products");
+      // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       dispatch({ type: PRODUCT_LIST_REQUEST });
-      const { data } = await axios.get("/api/products");
+      const {data} =  await productApi.getAll();
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+      localStorage.setItem("userInfo", JSON.stringify(data));
     } catch (error) {
       dispatch({
         type: PRODUCT_LIST_FAIL,
