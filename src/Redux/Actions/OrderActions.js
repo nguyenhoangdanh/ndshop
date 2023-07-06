@@ -26,6 +26,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     } = getState();
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${userInfo.token}`,
@@ -62,6 +63,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
     } = getState();
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -95,6 +97,7 @@ export const payOrder =
       } = getState();
 
       const config = {
+        baseURL: 'https://shopcaycanh.vercel.app',
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userInfo.token}`,
@@ -132,6 +135,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
     } = getState();
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },

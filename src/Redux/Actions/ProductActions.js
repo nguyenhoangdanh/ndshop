@@ -79,6 +79,7 @@ export const createProductReview =
       } = getState();
 
       const config = {
+        baseURL: 'https://shopcaycanh.vercel.app',
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userInfo.token}`,

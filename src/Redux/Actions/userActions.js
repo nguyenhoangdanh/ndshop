@@ -16,13 +16,13 @@ import {
 } from "../Constants/UserContants";
 import axios from "axios";
 import { ORDER_LIST_MY_RESET } from "../Constants/OrderConstants";
-
+import userApi from "../../api/userApi";
 // LOGIN
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
-
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         "Content-Type": "application/json",
       },
@@ -61,6 +61,7 @@ export const register = (name, email, password) => async (dispatch) => {
     dispatch({ type: USER_REGISTER_REQUEST });
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         "Content-Type": "application/json",
       },
@@ -95,6 +96,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     } = getState();
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -127,6 +129,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     } = getState();
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${userInfo.token}`,
