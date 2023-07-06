@@ -11,8 +11,8 @@ const axiosClient=axios.create({
 // Add a request interceptor
 axiosClient.interceptors.request.use(function (config) {
   // Do something before request is sent
-  if (JSON.parse(localStorage.getItem("userInfo"))?.accessToken){
-    config.headers.Authorization = "Bearer " + JSON.parse(localStorage.getItem("userInfo"))?.accessToken
+  if (JSON.parse(localStorage.getItem("userInfo"))?.token){
+    config.headers.Authorization = "Bearer " + JSON.parse(localStorage.getItem("userInfo"))?.token
   }
   return config;
 }, function (error) {
