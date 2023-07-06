@@ -5,7 +5,8 @@ const axiosClient=axios.create({
     headers:{
         'Content-Type': 'application/json',
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, Accept, Authorization, X-Request-With"
         // Authorization:
         // "Bearer " + JSON.parse(localStorage.getItem("userInfo"))?.data?.accessToken ?? '', 
     },
