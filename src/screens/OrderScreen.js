@@ -220,7 +220,7 @@ const OrderScreen = ({ match }) => {
                 {!order.isPaid && (
                   <div className="col-12">
                     {loadingPay && <Loading />}
-                    {!sdkReady ? (
+                    {sdkReady ? (
                       <Loading />
                     ) : (
                       <PayPalButton

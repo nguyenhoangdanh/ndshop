@@ -65,7 +65,7 @@ const CartScreen = ({ match, location, history }) => {
                 </div>
                 <div className="cart-image col-md-3">
                   <img src={item.image} alt={item.name} />
-                </div>s
+                </div>
                 <div className="cart-text col-md-5 d-flex align-items-center">
                   <Link to={`/products/${item.product}`}>
                   

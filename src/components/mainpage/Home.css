@@ -1,15 +1,18 @@
 .home{
   margin-top: 50px;
+  
 }
 
 .homeSlide{
-  box-shadow: 5px 5px;
+  box-shadow: 3px 5px;
   border-radius: 5px;
-  /* height: 350px; */
+  background: #dffec4;
+  height: 400px;
 }
 
 .homeSlide h1 {
-    font-size: 45px;
+    font-size: 35px;
+    margin-top: 30px;
     /* line-height: 55px;
     margin: 50px 0 20px 0; */
   }
@@ -19,7 +22,7 @@
   }
   .homeSlide ul {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
   }
   .homeSlide ul li {
     border: 2px solid #b8b7b7;
@@ -32,7 +35,7 @@
   }
   .homeSlide ul li button::before {
     font-size: 15px !important;
-    color: #0f3460;
+    color: #60230f;
     position: absolute;
     top: 2px;
     left: 0;
@@ -44,10 +47,15 @@
   .homeSlide .box .left{
     width: 70%;
   }
+   .left button{
+    margin-top: -400px;
+  }
   .homeSlide .box .right{
     width: 30%;
   }
   .homeSlide .box img{
+    margin-top: 10px;
     width:  100%;
     height: 100%;
+    border-radius: 5px 20px;
   }

@@ -28,6 +28,7 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({ type: USER_LOGIN_REQUEST });
     const config = {
       headers: {
+        baseURL: 'https://shopcaycanh.vercel.app',
         "Content-Type": "application/json",
       },
     };

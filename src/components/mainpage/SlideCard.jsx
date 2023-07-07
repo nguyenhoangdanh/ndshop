@@ -27,10 +27,10 @@ export const SlideCard = () => {
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>
                   {/* <img src={value.cover} alt='' /> */}
-                  <button className='btn-primary'>Visit Collections</button>
+                  {/* <button className='btn-danger'>Visit Collections</button> */}
                 </div>
                 <div className='right'>
-                  <img src={value.cover} alt='' />
+                  <img src={value.cover} alt=''/>
                 </div>
               </div>
             </>
