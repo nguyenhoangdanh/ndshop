@@ -25,7 +25,7 @@ export const listProduct =  ()  =>
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const {products,page,pages} =  await productApi.getAll();
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
-      console.log(products)
+      // console.log(products)
       // localStorage.setItem("userInfo", JSON.stringify(data));
     } catch (error) {
       dispatch({

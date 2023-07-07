@@ -652,3 +652,8 @@ textarea:focus {
   background-color: black;
   border: 1px solid black;
 }
+
+.home{
+  height: 400px;
+}
+

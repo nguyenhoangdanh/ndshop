@@ -12,7 +12,7 @@ const userApi={
     },
     login(data) {
         const url='/api/users/login';
-        return axiosClient.post(url,data)
+        return axiosClient.post(url, data)
     },
     sendemail(data) {
         const url='/auth/send-password-reset-link';
