@@ -16,36 +16,18 @@ import productApi from "../../api/productApi";
 // PRODUCT LIST
 
 
-export const listProduct =  ()  =>
-  async (dispatch) => {
-    try {
-      dispatch({ type: PRODUCT_LIST_REQUEST });
-      const { data } = await axios.get("/api/products");
-      dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
-      // dispatch({ type: PRODUCT_LIST_REQUEST });
-      // const {products,page,pages} =  await productApi.getAll();
-      // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
-      // console.log(products)
-      localStorage.setItem("userInfo", JSON.stringify(data));
-    } catch (error) {
-      dispatch({
-        type: PRODUCT_LIST_FAIL,
-        payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-      });
-    }
-  };
-
-// export const listProduct =
-//   ( keyword = " ", pageNumber = " " ) =>
+// export const listProduct =  ()  =>
 //   async (dispatch) => {
 //     try {
 //       dispatch({ type: PRODUCT_LIST_REQUEST });
-//       const { data } = await axios.get(
-//         `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
+//       const { data } = await axios.get("/api/products");
 //       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+//       // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: } });
+//       // dispatch({ type: PRODUCT_LIST_REQUEST });
+//       // const {products,page,pages} =  await productApi.getAll();
+//       // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
+//       // console.log(products)
+//       localStorage.setItem("userInfo", JSON.stringify(data));
 //     } catch (error) {
 //       dispatch({
 //         type: PRODUCT_LIST_FAIL,
@@ -56,6 +38,25 @@ export const listProduct =  ()  =>
 //       });
 //     }
 //   };
+
+export const listProduct =
+  ( keyword = " ", pageNumber = " " ) =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: PRODUCT_LIST_REQUEST });
+      const { data } = await axios.get(
+        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
+      dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type: PRODUCT_LIST_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
 
 // SINGLE PRODUCT
 export const listProductDetails = (id) => async (dispatch) => {
