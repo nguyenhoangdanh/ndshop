@@ -25,7 +25,7 @@ export const login = (email, password) => async (dispatch) => {
     // dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
     // console.log(data);
     // localStorage.setItem("userInfo", JSON.stringify(data));
-    dispatch({ type: USER_LOGIN_REQUEST });
+
     const config = {
       headers: {
         baseURL: 'https://shopcaycanh.vercel.app',
@@ -34,6 +34,7 @@ export const login = (email, password) => async (dispatch) => {
         "Access-Control-Allow-Method": "POST",
       },
     };
+    dispatch({ type: USER_LOGIN_REQUEST });
 
 
     const {data} = await axios.post(
