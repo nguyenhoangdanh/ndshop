@@ -43,9 +43,17 @@ export const listProduct =
   ( keyword = " ", pageNumber = " " ) =>
   async (dispatch) => {
     try {
+
+      const config = {
+        baseURL: 'https://shopcaycanh.vercel.app',
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const {data} = await axios.get(
-        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
+        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,config);
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
     } catch (error) {
