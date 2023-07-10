@@ -1,6 +1,7 @@
 {
   "name": "ndshop",
   "version": "0.1.0",
+  "homepage": ".",
   "proxy": "https://shopcaycanh.vercel.app",
   "private": true,
   "dependencies": {
