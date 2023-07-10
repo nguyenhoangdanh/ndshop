@@ -8,7 +8,15 @@ import {
 
 // ADD TO CART
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/products/${id}`);
+
+  const config = {
+    baseURL: 'https://shopcaycanh.vercel.app',
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const { data } = await axios.get(`/api/products/${id}`, config);
 
   dispatch({
     type: CART_ADD_ITEM,
