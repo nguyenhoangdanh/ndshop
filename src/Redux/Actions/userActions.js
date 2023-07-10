@@ -27,8 +27,8 @@ export const login = (email, password) => async (dispatch) => {
     // localStorage.setItem("userInfo", JSON.stringify(data));
 
     const config = {
+      baseURL: 'https://shopcaycanh.vercel.app',
       headers: {
-        baseURL: 'https://shopcaycanh.vercel.app',
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Method": "POST",
