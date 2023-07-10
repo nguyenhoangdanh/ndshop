@@ -80,7 +80,7 @@ const SingleProduct = ({ history, match }) => {
                   <div className="product-count col-lg-7 ">
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Giá</h6>
-                      <span>${product.price}</span>
+                      <span>{product.price} đ</span>
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Trạng thái</h6>
@@ -94,7 +94,7 @@ const SingleProduct = ({ history, match }) => {
                       <h6>Đánh giá</h6>
                       <Rating
                         value={product.rating}
-                        text={`${product.numReviews} reviews`}
+                        text={`${product.numReviews} đánh giá`}
                       />
                     </div>
                     {product.countInStock > 0 ? (

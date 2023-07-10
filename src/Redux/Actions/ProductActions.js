@@ -19,14 +19,14 @@ import productApi from "../../api/productApi";
 export const listProduct =  ()  =>
   async (dispatch) => {
     try {
-      // dispatch({ type: PRODUCT_LIST_REQUEST });
-      // const { data } = await axios.get("/api/products");
-      // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       dispatch({ type: PRODUCT_LIST_REQUEST });
-      const {products,page,pages} =  await productApi.getAll();
-      dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
+      const { data } = await axios.get("/api/products");
+      dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+      // dispatch({ type: PRODUCT_LIST_REQUEST });
+      // const {products,page,pages} =  await productApi.getAll();
+      // dispatch({ type: PRODUCT_LIST_SUCCESS, payload: {products,page,pages} });
       // console.log(products)
-      // localStorage.setItem("userInfo", JSON.stringify(data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
     } catch (error) {
       dispatch({
         type: PRODUCT_LIST_FAIL,
