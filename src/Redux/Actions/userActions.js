@@ -30,11 +30,13 @@ export const login = (email, password) => async (dispatch) => {
       headers: {
         baseURL: 'https://shopcaycanh.vercel.app',
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Method": "POST",
       },
     };
 
-    
-    const { data } = await axios.post(
+
+    const {data} = await axios.post(
       `/api/users/login`,
       { email, password },
       config
