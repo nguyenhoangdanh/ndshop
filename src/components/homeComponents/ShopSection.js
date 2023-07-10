@@ -11,6 +11,24 @@ const ShopSection = (props) => {
   const { keyword, pagenumber } = props;
   const dispatch = useDispatch();
 
+// Create our number formatter.
+const formatter = new Intl.NumberFormat('vi-VN', {
+  style: 'currency',
+  currency: 'VND',
+}).format();
+function addCommas(nStr)
+{
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages} = productList;
   // const { loading, error, products, page, pages } = productList;
@@ -39,14 +57,16 @@ const ShopSection = (props) => {
                 ) : (
                   <>
                     {products && products.map((product) => (
+
+                      
                       <div
                         className="shop col-lg-4 col-md-6 col-sm-6"
                         key={product._id}
                       >
-                        <div className="border-product">
+                        <div className="border-product" style={{cursor:"pointer"}}>
                           <Link to={`/products/${product._id}`}>
-                            <div className="shopBack">
-                              <img src={product.image} alt={product.name} />
+                            <div className="shopBack" style={{cursor:"pointer"}}>
+                              <img src={product.image} alt={product.name}/>
                             </div>
                           </Link>
 
@@ -61,7 +81,7 @@ const ShopSection = (props) => {
                               value={product.rating}
                               text={`${product.numReviews} Bình luận`}
                             />
-                            <h3>{product.price} đ</h3>
+                            <h3>{product.price.toLocaleString('vi-VN')} đ</h3>
                       
                           </div>
                         </div>

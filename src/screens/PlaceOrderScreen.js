@@ -16,19 +16,26 @@ const PlaceOrderScreen = ({ history }) => {
 
   // Calculate Price
   const addDecimals = (num) => {
-    return (Math.round(num * 100) / 100).toFixed(2);
+    return (Math.round(num * 100) / 100);
+    // return (Math.round(num * 100) / 100).toFixed(2);
   };
 
   cart.itemsPrice = addDecimals(
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   );
   cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100);
+  // cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
   cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
+  // cart.totalPrice = (
+  //   Number(cart.itemsPrice) +
+  //   Number(cart.shippingPrice) +
+  //   Number(cart.taxPrice)
+  // ).toFixed(2);
   cart.totalPrice = (
     Number(cart.itemsPrice) +
     Number(cart.shippingPrice) +
     Number(cart.taxPrice)
-  ).toFixed(2);
+  ).toLocaleString('vi-VN');
 
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, success, error } = orderCreate;
@@ -169,7 +176,7 @@ const PlaceOrderScreen = ({ history }) => {
                   <td>
                     <strong>Tổng:</strong>
                   </td>
-                  <td>{cart.totalPrice} đ</td>
+                  <td>{cart.totalPrice.toLocaleString('vi-VN')} đ</td>
                 </tr>
               </tbody>
             </table>

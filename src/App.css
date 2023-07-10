@@ -657,3 +657,15 @@ textarea:focus {
   height: 400px;
 }
 
+.shopBack img{
+	display:block;
+	transition: all .5s ease;
+}
+.shopBack{
+  display:block;
+	overflow: hidden;
+}
+.shopBack img:hover{
+  transform: scale(1.3); /* cỡ zoom khi di chuột vào */
+}
+
