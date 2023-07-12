@@ -80,7 +80,7 @@ const SingleProduct = ({ history, match }) => {
                   <div className="product-count col-lg-7 ">
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Giá</h6>
-                      <span>{product.price.toLocaleString('vi-VN')} đ</span>
+                      <span>{product.price} đ</span>
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Trạng thái</h6>
